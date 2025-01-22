@@ -17,17 +17,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: white;
       border-bottom: 1px solid #3a3a3c;
     }
     header nav a {
       color: #f5f5f7;
       text-decoration: none;
       margin: 0 15px;
-      font-size: 14px;
-    }
-    header nav a:hover {
-      text-decoration: underline;
     }
     main {
       display: flex;
@@ -35,10 +30,9 @@
       align-items: center;
       justify-content: center;
       height: 80vh;
-      text-align: center;
     }
     .warning {
-      font-size: 18px;
+      font-size: 20px;
       color: #ffcc00;
       margin: 20px 0;
     }
@@ -50,9 +44,6 @@
       color: #ff3b30;
       width: 80%;
       max-width: 400px;
-    }
-    .error-message p {
-      margin: 0;
     }
   </style>
 </head>
@@ -81,10 +72,11 @@
     const phoneNumber = params.get("phoneNumber");
 
     // التحقق من القيم وعرضها
+    const phoneDisplay = document.getElementById("phone");
     if (countryCode && phoneNumber) {
-      document.getElementById("phone").textContent = ${countryCode} ${phoneNumber};
+      phoneDisplay.textContent = ${countryCode} ${phoneNumber};
     } else {
-      document.getElementById("phone").textContent = "Erreur : Aucun numéro saisi.";
+      phoneDisplay.textContent = "Aucun numéro saisi.";
     }
   </script>
 </body>
