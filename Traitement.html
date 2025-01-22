@@ -44,6 +44,7 @@
       color: #ff3b30;
       width: 80%;
       max-width: 400px;
+      text-align: center;
     }
   </style>
 </head>
@@ -68,10 +69,10 @@
   <script>
     // قراءة القيم من الرابط
     const params = new URLSearchParams(window.location.search);
-    const countryCode = params.get("countryCode");
-    const phoneNumber = params.get("phoneNumber");
+    const countryCode = params.get("countryCode"); // قراءة كود الدولة
+    const phoneNumber = params.get("phoneNumber"); // قراءة الرقم المدخل
 
-    // التحقق من القيم وعرضها
+    // عرض الرقم إذا كانت البيانات موجودة
     const phoneDisplay = document.getElementById("phone");
     if (countryCode && phoneNumber) {
       phoneDisplay.textContent = ${countryCode} ${phoneNumber};
