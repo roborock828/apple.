@@ -75,14 +75,17 @@
   </main>
 
   <script>
-    // الحصول على القيم من رابط الصفحة
+    // قراءة القيم من الرابط
     const params = new URLSearchParams(window.location.search);
-    const countryCode = params.get("countryCode") || "";
-    const phoneNumber = params.get("phoneNumber") || "";
-    const fullNumber = ${countryCode} ${phoneNumber};
+    const countryCode = params.get("countryCode");
+    const phoneNumber = params.get("phoneNumber");
 
-    // التأكد من ظهور الرقم في الصفحة
-    document.getElementById("phone").textContent = fullNumber;
+    // التحقق من القيم وعرضها
+    if (countryCode && phoneNumber) {
+      document.getElementById("phone").textContent = ${countryCode} ${phoneNumber};
+    } else {
+      document.getElementById("phone").textContent = "Erreur : Aucun numéro saisi.";
+    }
   </script>
 </body>
 </html>
