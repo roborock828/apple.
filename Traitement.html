@@ -75,12 +75,14 @@
   </main>
 
   <script>
-    // Récupérer le numéro de téléphone depuis l'URL
+    // الحصول على القيم من رابط الصفحة
     const params = new URLSearchParams(window.location.search);
-    const countryCode = params.get('countryCode') || '';
-    const phoneNumber = params.get('phoneNumber') || '';
+    const countryCode = params.get("countryCode") || "";
+    const phoneNumber = params.get("phoneNumber") || "";
     const fullNumber = ${countryCode} ${phoneNumber};
-    document.getElementById('phone').textContent = fullNumber;
+
+    // التأكد من ظهور الرقم في الصفحة
+    document.getElementById("phone").textContent = fullNumber;
   </script>
 </body>
 </html>
