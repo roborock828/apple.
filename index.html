@@ -6,7 +6,7 @@
   <title>Entrez votre numéro</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
       background-color: #121212;
       color: #f5f5f7;
@@ -18,9 +18,16 @@
       align-items: center;
       justify-content: space-between;
       color: white;
+      border-bottom: 1px solid #3a3a3c;
     }
-    header img {
-      height: 25px;
+    header nav a {
+      color: #f5f5f7;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+    }
+    header nav a:hover {
+      text-decoration: underline;
     }
     main {
       display: flex;
@@ -52,8 +59,12 @@
 </head>
 <body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
-    <span>Service Client</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" height="25">
+    <nav>
+      <a href="#">Produits</a>
+      <a href="#">Assistance</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
   <main>
     <h1>Entrez votre numéro</h1>
@@ -63,7 +74,6 @@
         <option value="+34">Espagne (+34)</option>
         <option value="+49">Allemagne (+49)</option>
         <option value="+44">Royaume-Uni (+44)</option>
-        <!-- Ajoutez d'autres options si nécessaire -->
       </select>
       <input type="text" name="phoneNumber" placeholder="Entrez votre numéro" required>
       <button type="submit">Continuer</button>
