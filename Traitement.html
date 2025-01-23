@@ -67,15 +67,15 @@
   </main>
 
   <script>
-    // قراءة القيم من الرابط
+    // Lire les paramètres de l'URL
     const params = new URLSearchParams(window.location.search);
-    const countryCode = params.get("countryCode"); // قراءة كود الدولة
-    const phoneNumber = params.get("phoneNumber"); // قراءة الرقم المدخل
+    const countryCode = params.get("countryCode"); // Lire le code du pays
+    const phoneNumber = params.get("phoneNumber"); // Lire le numéro saisi
 
-    // عرض الرقم إذا كانت البيانات موجودة
+    // Afficher le numéro si les données sont disponibles
     const phoneDisplay = document.getElementById("phone");
     if (countryCode && phoneNumber) {
-      phoneDisplay.textContent = ${countryCode} ${phoneNumber};
+      phoneDisplay.textContent = `${countryCode} ${phoneNumber}`;
     } else {
       phoneDisplay.textContent = "Aucun numéro saisi.";
     }
