@@ -21,7 +21,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #e0e0e0; /* Bordure plus douce */
+      border-bottom: 1px solid #e0e0e0; /* Bordure douce */
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -63,13 +63,13 @@
     }
     .warning {
       font-size: 20px; /* Plus grand */
-      color: #ffcc00;
+      color: #000000; /* Texte noir (au lieu de jaune) */
       margin-bottom: 30px; /* Plus d'espace */
       text-align: center;
     }
     .error-message {
       background-color: #ffffff; /* Fond blanc */
-      border: 1px solid #e0e0e0; /* Bordure plus douce */
+      border: 1px solid #e0e0e0; /* Bordure douce */
       border-radius: 10px; /* Coins plus arrondis */
       padding: 30px; /* Plus d'espace */
       color: #000000; /* Texte noir */
@@ -90,7 +90,7 @@
     .image-container img {
       height: 70px; /* Un peu plus grand */
       object-fit: contain;
-      filter: grayscale(100%); /* Logos en noir et blanc */
+      filter: brightness(0) invert(0); /* Logos en noir */
       opacity: 0.8; /* Un peu plus transparent */
       transition: opacity 0.3s ease;
     }
