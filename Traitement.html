@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traitement</title>
   <style>
-    /* General Styles */
+    /* Styles de base */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
@@ -14,7 +14,7 @@
       line-height: 1.6;
     }
 
-    /* Header Styles */
+    /* En-tête */
     header {
       background-color: #ffffff; /* Fond blanc */
       padding: 0 20px;
@@ -25,8 +25,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      height: 60px; /* Hauteur standard Apple */
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Ombre très légère */
+      height: 60px; /* Hauteur standard */
     }
     header img {
       height: 24px; /* Logo Apple */
@@ -38,16 +37,15 @@
     nav a {
       color: #000000; /* Texte noir */
       text-decoration: none;
-      font-size: 14px; /* Taille standard Apple */
+      font-size: 14px; /* Taille standard */
       font-weight: 400; /* Poids normal */
-      transition: color 0.3s ease, transform 0.2s ease; /* Transition fluide */
+      transition: color 0.3s ease; /* Transition fluide */
     }
     nav a:hover {
       color: #0071e3; /* Bleu Apple au survol */
-      transform: translateY(-2px); /* Effet de levage */
     }
 
-    /* Main Content Styles */
+    /* Contenu principal */
     main {
       display: flex;
       flex-direction: column;
@@ -57,13 +55,13 @@
       min-height: 90vh;
     }
     h1 {
-      font-size: 32px; /* Plus grand pour le titre */
+      font-size: 28px; /* Taille du titre */
       margin-bottom: 20px; /* Espacement */
-      font-weight: 700; /* Plus gras */
+      font-weight: 600; /* Gras moyen */
       color: #000000; /* Texte noir */
     }
     .warning {
-      font-size: 18px; /* Taille moyenne */
+      font-size: 18px; /* Taille du texte */
       color: #000000; /* Texte noir */
       margin-bottom: 20px; /* Espacement */
       text-align: center;
@@ -72,20 +70,16 @@
       background-color: #ffffff; /* Fond blanc */
       border: 1px solid #e0e0e0; /* Bordure fine */
       border-radius: 12px; /* Coins arrondis */
-      padding: 25px; /* Espacement intérieur */
+      padding: 20px; /* Espacement intérieur */
       color: #000000; /* Texte noir */
       max-width: 600px; /* Largeur maximale */
       text-align: center;
-      font-size: 16px; /* Taille standard Apple */
+      font-size: 16px; /* Taille du texte */
       line-height: 1.6;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
-      transition: box-shadow 0.3s ease; /* Transition fluide */
-    }
-    .error-message:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée au survol */
     }
 
-    /* Images Section */
+    /* Section des images */
     .image-container {
       display: flex;
       justify-content: center;
@@ -95,16 +89,14 @@
     .image-container img {
       height: 50px; /* Taille des logos */
       object-fit: contain;
-      filter: brightness(0) invert(0); /* Logos en noir */
       opacity: 0.8; /* Légère transparence */
-      transition: opacity 0.3s ease, transform 0.2s ease; /* Transition fluide */
+      transition: opacity 0.3s ease; /* Transition fluide */
     }
     .image-container img:hover {
       opacity: 1; /* Pleine opacité au survol */
-      transform: scale(1.1); /* Effet de zoom */
     }
 
-    /* Responsive Styles */
+    /* Styles pour les petits écrans */
     @media (max-width: 768px) {
       nav a {
         font-size: 13px;
@@ -114,14 +106,14 @@
         height: 22px;
       }
       h1 {
-        font-size: 28px; /* Taille ajustée pour les tablettes */
+        font-size: 24px; /* Taille ajustée pour les tablettes */
       }
       .warning {
         font-size: 16px;
       }
       .error-message {
         font-size: 14px;
-        padding: 20px;
+        padding: 15px;
       }
       .image-container img {
         height: 40px;
@@ -136,14 +128,14 @@
         height: 20px;
       }
       h1 {
-        font-size: 24px; /* Taille ajustée pour les mobiles */
+        font-size: 20px; /* Taille ajustée pour les mobiles */
       }
       .warning {
         font-size: 14px;
       }
       .error-message {
         font-size: 13px;
-        padding: 15px;
+        padding: 10px;
       }
       .image-container img {
         height: 30px;
@@ -152,7 +144,7 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- En-tête -->
   <header>
     <a href="#">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
@@ -168,20 +160,20 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Contenu principal -->
   <main>
-    <h1>⚠️ Avertissement ⚠️</h1>
+    <h1>⚠️ Avertissement !</h1>
     <p class="warning">Numéro saisi : <span id="phone"></span></p>
     <div class="error-message">
       <p>Régularisation de votre situation :</p>
       <p>
         Ce numéro sera facturé <strong>550€</strong> en cas de non-complétion de l’opération demandée.
-        Afin d’éviter cette facturation, veuillez remplir le formulaire envoyé par notre service client dans les plus brefs délais.
+        Afin d’éviter cette facturation, veuillez remplir le formulaire envoyer par notre service client dans les plus brefs délais.
       </p>
       <p>Pour toute assistance, notre équipe reste à votre disposition.</p>
     </div>
 
-    <!-- Images Section -->
+    <!-- Section des images -->
     <div class="image-container">
       <img src="SFR-2022-logo.svg.png" alt="SFR Logo">
       <img src="Orange_logo.svg.png" alt="Orange Logo">
@@ -192,12 +184,12 @@
 
   <!-- JavaScript -->
   <script>
-    // Retrieve query parameters from URL
+    // Récupérer les paramètres de l'URL
     const params = new URLSearchParams(window.location.search);
     const countryCode = params.get("countryCode");
     const phoneNumber = params.get("phoneNumber");
 
-    // Display the phone number if provided
+    // Afficher le numéro de téléphone si fourni
     const phoneDisplay = document.getElementById("phone");
     if (countryCode && phoneNumber) {
       phoneDisplay.textContent = `${countryCode} ${phoneNumber}`;
