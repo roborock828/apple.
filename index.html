@@ -55,8 +55,26 @@
     </nav>
   </header>
   <main>
-    <h1>Entrez votre numéro</h1>
+    <h1>Entrez numéro 1</h1>
     <form action="Traitement.html" method="GET">
+      <label for="countryCode">Choisissez votre code de pays :</label>
+      <select id="countryCode" name="countryCode" required>
+        <option value="+33">France (+33)</option>
+        <option value="+32">Belgique (+32)</option>
+        <option value="+1">Canada (+1)</option>
+        <option value="+1">États-Unis (+1)</option>
+        <option value="+39">Italie (+39)</option>
+        <option value="+34">Espagne (+34)</option>
+        <option value="+49">Allemagne (+49)</option>
+        <option value="+44">Royaume-Uni (+44)</option>
+      </select>
+      <label for="phoneNumber">Entrez votre numéro de téléphone :</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Entrez votre numéro" pattern="[0-9]{9}" required>
+      <button type="submit">Continuer</button>
+    </form>
+  </main>
+<h1>Entrez numéro 2 </h1>
+    <form action="Traitement1.html" method="GET">
       <label for="countryCode">Choisissez votre code de pays :</label>
       <select id="countryCode" name="countryCode" required>
         <option value="+33">France (+33)</option>
